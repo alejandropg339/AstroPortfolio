@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import Card from '../commons/Card.astro';
+
+const personalImageAlt = 'Alejandro Padilla';
+---
+
+<div class="grid grid-flow-row grind-cols-1 md:grid-cols-3 gap-4">
+  <!-- <div class='col-span-2 md:col-span-1 hidden sm:block'> -->
+    <Card highlight={false} class="p-2 hidden sm:block h-full">
+      <aside class='col-span-2 md:col-span-1 flex justify-center md:block h-full'>
+        <Image
+          src="/me.webp"
+          alt={personalImageAlt}
+          class="shadow-lg size-16 w-[60%] md:w-full min-h-96 object-cover rounded-3xl h-full grayscale-[50%] hover:grayscale-0 transition duration-300 ease-in-out"
+          width={400}
+          height={400}
+          loading="eager"
+        />
+      </aside>
+    </Card>
+  <!-- </div> -->
+
+  <!-- <div class='col-span-2'> -->
+    <Card class="p-8 col-span-1 md:col-span-2">
+      <Image
+        src="/me.webp"
+        alt={personalImageAlt}
+        class="w-full object-cover rounded-3xl transition h-[35%] block sm:hidden"
+        width={200}
+        height={200}
+        loading="eager"
+      />
+    <h2 class='text-4xl font-semibold mb-2 mt-4 md:mt-0'>About me</h2>
+    <p class='text-sm leading-relaxed opacity-85'>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto iste
+      cumque eum quam tempora in magnam quaerat, exercitationem autem soluta
+      dolore vero perferendis consectetur molestiae incidunt, error assumenda
+      nam mollitia? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      Iste eius ullam, minima, deserunt dolorum rem fugit quo sint
+      necessitatibus quisquam suscipit rerum culpa consequuntur sapiente. Earum
+      odio aliquid ipsa eum! Lorem ipsum dolor sit amet consectetur, adipisicing
+      elit. Repudiandae voluptas suscipit adipisci doloribus optio ducimus aut
+      qui. Eum, exercitationem sed. Veritatis architecto cumque odio
+      necessitatibus nam, minima dignissimos debitis voluptate! Lorem ipsum
+      dolor sit amet consectetur adipisicing elit. Repudiandae odio voluptatibus
+      tenetur consequuntur itaque animi, aperiam perspiciatis dignissimos
+      voluptatem quae atque excepturi, perferendis cupiditate rem quas
+      distinctio neque? Aperiam, accusantium.
+    </p>
+  </Card>
+  <!-- </div> -->
+
+</div>
+

@@ -1,0 +1,32 @@
+---
+const { class: className, id } = Astro.props
+---
+
+<section
+  id={id}
+  data-section={id}
+  class={`section ${className} scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl`}
+>
+  <slot />
+</section>
+
+<style>
+	section {
+		animation: reveal linear both;
+		animation-timeline: view();
+    animation-range: entry 20% cover 30%;
+	}
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      translete: translateY(100px);
+      scale: 0.9;
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      scale: 1;
+    }
+  }
+</style>

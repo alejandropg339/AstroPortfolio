@@ -1,0 +1,54 @@
+---
+import Instagram from '../assets/Instagram.astro';
+import Linkedin from '../assets/Linkedin.astro';
+import Mail from '../assets/Mail.astro';
+import Github from '../assets/Github.astro';
+import SocialButtons from './SocialButtons.astro';
+
+const contact = [
+  {
+    name: 'Instagram',
+    link: 'https://www.instagram.com/alejandro339/',
+    icon: Instagram,
+  },
+  {
+    name: 'Linkedin',
+    link: 'https://www.linkedin.com/in/alejandro-padilla-frontend-developer/',
+    icon: Linkedin,
+  },
+  {
+    name: 'Mail',
+    link: 'mailto:alejandropg339@gmail.com',
+    icon: Mail,
+  },
+  {
+    name: 'Giehub',
+    link: 'https://github.com/alejandropg339',
+    icon: Github,
+  },
+];
+---
+
+<aside>
+  <div class="w-100">
+    <h3
+      class="text-5xl font-bold bg-gradient-to-r from-orange-700 via-yellow-500 to-rose-400 bg-clip-text bg-300% animate-gradient leading-tight text-transparent text-center"
+    >
+      Contact
+    </h3>
+  </div>
+
+  <div class="flex items-center w-100 justify-center gap-4 my-8">
+    {
+      contact.map((item) => {
+        return (
+          <SocialButtons link={item.link}>
+            <aside class="grayscale">
+              <item.icon class="size-8" />
+            </aside>
+          </SocialButtons>
+        );
+      })
+    }
+  </div>
+</aside>

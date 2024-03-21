@@ -1,0 +1,92 @@
+---
+import SkillsCarousel from './SkillsCarousel.astro';
+import Card from '../commons/Card.astro';
+---
+
+<aside>
+  <div class="w-100">
+    <h3 class="text-5xl font-semibold text-center">My skills</h3>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-12">
+    <div class="grid gap-4">
+      <div>
+        <Card class="p-8 col-span-2 h-auto max-w-full">
+          <aside class="flex gap-4 items-center mb-4 flex-wrap">
+            <img src="/management.webp" alt="management" class="w-7 h-7" />
+            <p class="text-xl font-semibold">Management</p>
+          </aside>
+          <p class="text-sm leading-relaxed opacity-85">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
+          </p>
+        </Card>
+      </div>
+      <div>
+        <Card class="p-8 col-span-2 h-auto max-w-full">
+          <aside class="flex gap-4 items-center mb-4 flex-wrap">
+            <img src="/languages.webp" alt="languages" class="w-7 h-7" />
+            <p class="text-xl font-semibold">Languages</p>
+          </aside>
+          <p class="text-sm leading-relaxed opacity-85">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
+          </p>
+        </Card>
+      </div>
+    </div>
+    <div class="grid gap-4">
+      <div>
+        <Card class="p-8 col-span-2 h-auto max-w-full">
+          <aside class="flex gap-4 items-center mb-4 flex-wrap">
+            <img src="/framework.webp" alt="frameworks" class="w-7 h-7" />
+            <p class="text-xl font-semibold">Frameworks</p>
+          </aside>
+          <p class="text-sm leading-relaxed opacity-85">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
+          </p>
+        </Card>
+      </div>
+
+      <div>
+        <Card class="p-8 col-span-2 h-auto max-w-full">
+          <aside class="flex gap-4 items-center mb-4 flex-wrap">
+            <img src="/styles.webp" alt="styles" class="w-7 h-7" />
+            <p class="text-xl font-semibold">Styles</p>
+          </aside>
+          <p class="text-sm leading-relaxed opacity-85">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
+          </p>
+        </Card>
+      </div>
+    </div>
+    <div class="grid gap-4">
+      <div>
+        <Card class="p-8 col-span-2 h-auto max-w-full">
+          <aside class="flex gap-4 items-center mb-4 flex-wrap">
+            <img src="/test.webp" alt="testing" class="w-7 h-7" />
+            <p class="text-xl font-semibold">Testing</p>
+          </aside>
+          <p class="text-sm leading-relaxed opacity-85">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
+          </p>
+        </Card>
+      </div>
+      <div>
+        <Card class="p-8 col-span-2 h-auto max-w-full">
+          <aside class="flex gap-4 items-center mb-4 flex-wrap">
+            <img src="/trazability.webp" alt="trazability" class="w-7 h-7" />
+            <p class="text-xl font-semibold">Trazability and Tools</p>
+          </aside>
+          <p class="text-sm leading-relaxed opacity-85">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
+            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
+          </p>
+        </Card>
+      </div>
+    </div>
+  </div>
+  <SkillsCarousel />
+</aside>

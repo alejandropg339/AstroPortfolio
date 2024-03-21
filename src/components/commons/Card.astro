@@ -1,0 +1,45 @@
+---
+const {class: className, highlight= true,...rest } = Astro.props
+
+---
+
+<div
+ {...rest}
+  class={
+  `
+  flex flex-col
+  items-center
+  rounded-3xl
+  relative
+  border-[0.5px]
+  boder-solid
+  border-[#ffffff24]
+  bg-[#16161d]
+  ${highlight  ? 'border-gradient' : 'overflow-hidden hover:neon-smooth-slate'}
+  ${className}`
+}
+>
+<div class="relative z-10 h-full">
+  <slot />
+</div>
+</div>
+
+<style>
+  .border-gradient:hover::before {
+    content: '';
+    background: linear-gradient(
+      to right,
+      rgb(194 65 12),
+      rgb(234 179 8),
+      #fb7185
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    border-radius: 1.5rem;
+    animation: pulse 3s ease infinite alternate;
+  }
+</style>

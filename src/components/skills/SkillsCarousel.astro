@@ -1,0 +1,80 @@
+---
+import Angular from '../assets/Angular.astro';
+import AstroLogo from '../assets/AstroLogo.astro';
+import Bootstrap from '../assets/Bootstrap.astro';
+import CssLogo from '../assets/CssLogo.astro';
+import Express from '../assets/Express.astro';
+import Git from '../assets/Git.astro';
+import Github from '../assets/Github.astro';
+import Html from '../assets/Html.astro';
+import Ionic from '../assets/Ionic.astro';
+import Jasmine from '../assets/Jasmine.astro';
+import Jest from '../assets/Jest.astro';
+import Js from '../assets/Js.astro';
+import Mongo from '../assets/Mongo.astro';
+import Next from '../assets/Next.astro';
+import Node from '../assets/Node.astro';
+import Pinia from '../assets/Pinia.astro';
+import Playwright from '../assets/Playwright.astro';
+import React from '../assets/React.astro';
+import Redux from '../assets/Redux.astro';
+import Sass from '../assets/Sass.astro';
+import Storybook from '../assets/Storybook.astro';
+import Tailwind from '../assets/Tailwind.astro';
+import Typescript from '../assets/Typescript.astro';
+import Vite from '../assets/Vite.astro';
+import Vue from '../assets/Vue.astro';
+import Zustand from '../assets/Zustand.astro';
+
+const logos = [
+  { name: 'Angular', component: Angular },
+  { name: 'Astro', component: AstroLogo },
+  { name: 'Bootstrap', component: Bootstrap },
+  { name: 'Css', component: CssLogo },
+  { name: 'Express', component: Express },
+  { name: 'Git', component: Git },
+  { name: 'Github', component: Github },
+  { name: 'Html', component: Html },
+  { name: 'Ionic', component: Ionic },
+  { name: 'Jasmine', component: Jasmine },
+  { name: 'Jest', component: Jest },
+  { name: 'Javascript', component: Js },
+  { name: 'Mongo DB', component: Mongo },
+  { name: 'Next Js', component: Next },
+  { name: 'Node', component: Node },
+  { name: 'Pinia', component: Pinia },
+  { name: 'Playwright', component: Playwright },
+  { name: 'React', component: React },
+  { name: 'Redux', component: Redux },
+  { name: 'Sass', component: Sass },
+  { name: 'Storybook', component: Storybook },
+  { name: 'Tailwind', component: Tailwind },
+  { name: 'Typescript', component: Typescript },
+  { name: 'Vite', component: Vite },
+  { name: 'Vue', component: Vue },
+  { name: 'Zustand', component: Zustand },
+];
+---
+
+<div
+  class="relative m-auto w-full overflow-hidden bg-carousel-gradient before:absolute before:left-0 before:top-0 before:z-[2] before:h-full before:w-[100px] before:bg-carousel-gradient before:content-[''] after:absolute after:right-0 after:top-0 after:z-[2] after:h-full after:w-[100px] after:-scale-x-100 after:bg-carousel-gradient after:content-[''] grayscale hover:grayscale-0 transition-all duration-300 ease-in-out before:transition-all before:duration-300 before:ease-in-out after:transition-all after:duration-300 after:ease-in-out"
+>
+  <div class="animate-infinite-slider flex w-[calc(250px*10)]">
+    {
+      logos.map((logo) => (
+        <div class="slide flex flex-col w-[140px] items-center justify-center me-9">
+          <logo.component class="size-10" />
+          <p class='text-xs mt-2 text-center'>{logo.name}</p>
+        </div>
+      ))
+    }
+    {
+      logos.map((logo) => (
+        <div class="slide flex flex-col w-[140px] items-center justify-center me-9">
+          <logo.component class="size-10" />
+          <p class='text-xs mt-2 text-center'>{logo.name}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>
