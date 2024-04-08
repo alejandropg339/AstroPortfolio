@@ -1,27 +1,40 @@
 ---
 import Card from '../commons/Card.astro';
 
+import { useTranslations } from '../../i18n/utils';
+
+
+const { currentLocale } = Astro;
+
+
+const t = useTranslations(currentLocale ?? 'en');
+
 const experience = [
     {
-        date: 'February 2022',
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+        date: t('experience.cobreTL.date'),
+        title: t('experience.cobreTL.title'),
+        description: t('experience.cobreTL.description'),
         currently: true
     },
     {
-        date: 'February 2022',
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+        date: t('experience.cobreSr.date'),
+        title: t('experience.cobreSr.title'),
+        description: t('experience.cobreSr.description'),
     },
     {
-        date: 'February 2022',
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+        date: t('experience.itc.date'),
+        title: t('experience.itc.title'),
+        description: t('experience.itc.description'),
     },
     {
-        date: 'February 2022',
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+        date: t('experience.latincarb.date'),
+        title: t('experience.latincarb.title'),
+        description: t('experience.latincarb.description'),
+    },
+    {
+        date: t('experience.freelance.date'),
+        title: t('experience.freelance.title'),
+        description: t('experience.freelance.description'),
     }
 ]
 
@@ -47,7 +60,7 @@ const experience = [
             <h3 class="text-lg font-semibold">
               {exp.title}
             </h3>
-            <p class="mb-4 text-base font-normal text-gray-500">
+            <p class="mb-4 text-base font-normal opacity-70">
               {exp.description}
             </p>
           </li>

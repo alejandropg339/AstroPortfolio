@@ -1,92 +1,157 @@
 ---
 import SkillsCarousel from './SkillsCarousel.astro';
 import Card from '../commons/Card.astro';
+import { useTranslations } from '../../i18n/utils';
+import Js from '../assets/Js.astro';
+import React from '../assets/React.astro';
+import Vue from '../assets/Vue.astro';
+import Node from '../assets/Node.astro';
+import Express from '../assets/Express.astro';
+import Next from '../assets/Next.astro';
+import Ionic from '../assets/Ionic.astro';
+import Angular from '../assets/Angular.astro';
+import AstroLogo from '../assets/AstroLogo.astro';
+import Git from '../assets/Git.astro';
+import Github from '../assets/Github.astro';
+import Docker from '../assets/Docker.astro';
+import Storybook from '../assets/Storybook.astro';
+import Mixpanel from '../assets/Mixpanel.astro';
+import Split from '../assets/Split.astro';
+import Analytics from '../assets/Analytics.astro';
+import Postman from '../assets/Postman.astro';
+import Typescript from '../assets/Typescript.astro';
+import SQL from '../assets/SQL.astro';
+import Jest from '../assets/Jest.astro';
+import Jasmine from '../assets/Jasmine.astro';
+import Playwright from '../assets/Playwright.astro';
+import Cypress from '../assets/Cypress.astro';
+import TestingLibrary from '../assets/TestingLibrary.astro';
+import CssLogo from '../assets/CssLogo.astro';
+import Sass from '../assets/Sass.astro';
+import Bootstrap from '../assets/Bootstrap.astro';
+import Tailwind from '../assets/Tailwind.astro';
+import Material from '../assets/Material.astro';
+import Redux from '../assets/Redux.astro';
+import Pinia from '../assets/Pinia.astro';
+import Zustand from '../assets/Zustand.astro';
+
+const { currentLocale } = Astro;
+
+const t = useTranslations(currentLocale ?? 'en');
+
+const content = [
+  {
+    title: t('skills.leadership.title'),
+    content: [
+      { text: 'Experience leading development teams and initiatives' , component: Js},
+      { text: 'Effective communication' , component: Js},
+      { text: 'Collaboration' , component: Js},
+      { text: 'Strong problem-solving' , component: Js},
+      { text: 'Commitment' , component: Js},
+      { text: 'Strategy' , component: Js},
+    ],
+    image: '/management.webp',
+    bullet: true,
+  },
+  {
+    title: t('skills.tools.title'),
+    content: [
+      { text: 'Git', component: Git },
+      { text: 'Github', component: Github },
+      { text: 'Docker', component: Docker },
+      { text: 'Storybook', component: Storybook },
+      { text: 'Pinia', component: Pinia },
+      { text: 'Zustand', component: Zustand },
+      { text: 'Redux', component: Redux },
+      { text: 'Mixpanel', component: Mixpanel },
+      { text: 'Split', component: Split },
+      { text: 'Google Alytics', component: Analytics },
+      { text: 'Postman', component: Postman },
+    ],
+    image: '/trazability.webp',
+  },
+  {
+    title: t('skills.frameworks.title'),
+    content: [
+      { text: 'React', component: React },
+      { text: 'Angular', component: Angular },
+      { text: 'Vue', component: Vue },
+      { text: 'Node.js', component: Node },
+      { text: 'Express', component: Express },
+      { text: 'Next.js', component: Next },
+      { text: 'Astro', component: AstroLogo },
+      { text: 'Ionic', component: Ionic },
+    ],
+    image: '/framework.webp',
+  },
+  {
+    title: t('skills.languages.title'),
+    content: [
+      { text: 'JavaScript', component: Js },
+      { text: 'TypeScript', component: Typescript },
+      { text: 'SQL', component: SQL },
+    ],
+    image: '/languages.webp',
+  },
+  {
+    title: t('skills.testing.title'),
+    content: [
+      { text: 'Jest', component: Jest },
+      { text: 'Jasmine', component: Jasmine },
+      { text: 'Playwright', component: Playwright },
+      { text: 'Cypress', component: Cypress },
+      { text: 'Testing Library', component: TestingLibrary },
+    ],
+    image: '/test.webp',
+  },
+  {
+    title: t('skills.styles.title'),
+    content: [
+      { text: 'Css', component: CssLogo },
+      { text: 'SASS', component: Sass },
+      { text: 'Bootstrap', component: Bootstrap },
+      { text: 'Material UI', component: Material },
+      { text: 'Tailwind', component: Tailwind },
+    ],
+    image: '/styles.webp',
+  },
+];
+
 ---
 
 <aside>
   <div class="w-100">
-    <h3 class="text-5xl font-semibold text-center">My skills</h3>
+    <h3 class="text-5xl font-semibold text-center">{t('skills.title')}</h3>
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-12">
-    <div class="grid gap-4">
-      <div>
-        <Card class="p-8 col-span-2 h-auto max-w-full">
-          <aside class="flex gap-4 items-center mb-4 flex-wrap">
-            <img src="/management.webp" alt="management" class="w-7 h-7" />
-            <p class="text-xl font-semibold">Management</p>
-          </aside>
-          <p class="text-sm leading-relaxed opacity-85">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
-          </p>
-        </Card>
-      </div>
-      <div>
-        <Card class="p-8 col-span-2 h-auto max-w-full">
-          <aside class="flex gap-4 items-center mb-4 flex-wrap">
-            <img src="/languages.webp" alt="languages" class="w-7 h-7" />
-            <p class="text-xl font-semibold">Languages</p>
-          </aside>
-          <p class="text-sm leading-relaxed opacity-85">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
-          </p>
-        </Card>
-      </div>
-    </div>
-    <div class="grid gap-4">
-      <div>
-        <Card class="p-8 col-span-2 h-auto max-w-full">
-          <aside class="flex gap-4 items-center mb-4 flex-wrap">
-            <img src="/framework.webp" alt="frameworks" class="w-7 h-7" />
-            <p class="text-xl font-semibold">Frameworks</p>
-          </aside>
-          <p class="text-sm leading-relaxed opacity-85">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
-          </p>
-        </Card>
-      </div>
-
-      <div>
-        <Card class="p-8 col-span-2 h-auto max-w-full">
-          <aside class="flex gap-4 items-center mb-4 flex-wrap">
-            <img src="/styles.webp" alt="styles" class="w-7 h-7" />
-            <p class="text-xl font-semibold">Styles</p>
-          </aside>
-          <p class="text-sm leading-relaxed opacity-85">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
-          </p>
-        </Card>
-      </div>
-    </div>
-    <div class="grid gap-4">
-      <div>
-        <Card class="p-8 col-span-2 h-auto max-w-full">
-          <aside class="flex gap-4 items-center mb-4 flex-wrap">
-            <img src="/test.webp" alt="testing" class="w-7 h-7" />
-            <p class="text-xl font-semibold">Testing</p>
-          </aside>
-          <p class="text-sm leading-relaxed opacity-85">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
-          </p>
-        </Card>
-      </div>
-      <div>
-        <Card class="p-8 col-span-2 h-auto max-w-full">
-          <aside class="flex gap-4 items-center mb-4 flex-wrap">
-            <img src="/trazability.webp" alt="trazability" class="w-7 h-7" />
-            <p class="text-xl font-semibold">Trazability and Tools</p>
-          </aside>
-          <p class="text-sm leading-relaxed opacity-85">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
-            iste cumque eum quam tempora in magnam quaerat, exercitationem autem
-          </p>
-        </Card>
-      </div>
-    </div>
+    {
+      content.map((item, index) => (
+        <div class="grid gap-4">
+          <Card class="p-8 col-span-2 h-auto max-w-full" alignment="start ">
+            <aside class="flex gap-4 mb-4 flex-wrap">
+              <img src={item.image} alt={item.title} class="w-7 h-7" />
+              <p class="text-xl font-semibold">{item.title}</p>
+            </aside>
+            <hr class='border-t-[1px] border-t-slate-700'/>
+            <ul class="list-disc mt-4">
+              {item.content.map((skill) => (
+                <li class={`text-base leading-relaxed opacity-85 flex mb-3 ${!item.bullet ? 'items-center' : ''}`}>
+                  <div
+                    class={
+                      item.bullet
+                        ? `absolute w-2 h-2 bg-orange-500 neon-smooth-orange rounded-full -start-1.5 mt-1.5`
+                        : 'hidden'
+                    }
+                  />
+                  {!item.bullet && skill.component && <skill.component class='size-5'/>}
+                  <span class="ms-3">{skill.text}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        </div>
+      ))
+    }
   </div>
-  <SkillsCarousel />
 </aside>
+<SkillsCarousel />

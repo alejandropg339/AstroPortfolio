@@ -8,6 +8,8 @@ export default {
 		extend: {
 			backgroundImage: {
 				'radial-gradient': 'linear-gradient(to right bottom, #364358, #3c4b63, #42536f, #485c7b, #4e6487)',
+				'orange-gradient': 'radial-gradient(#fe7a0da2 20%, #198ba455 100%)',
+				'bottom-gradient': 'radial-gradient(at center bottom, #7C7BCA4D, #FFFFFF00)',
 				'button-gradient': 'linear-gradient(to right bottom, #f06c09, #e8622c, #dc5c3e, #cd584c, #bc5656)',
 				'card-gradient': 'linear-gradient(rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0.05) 100%)',
 				'carousel-gradient': 'linear-gradient(to right, rgba(18, 18, 18, 1) 0%, rgba(18, 18, 18, 0) 100%)'
@@ -23,7 +25,7 @@ export default {
 					"100%": {
 					  transform: "translateX(calc(-250px * 8.2))",
 					},
-				  },
+				  }
 			  },
 			  backgroundSize: {
 				'300%': '300%',

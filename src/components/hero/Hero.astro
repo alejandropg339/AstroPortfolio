@@ -1,5 +1,10 @@
 ---
+import { useTranslations } from '../../i18n/utils';
 import LinkButton from '../commons/LinkButton.astro'
+
+const { currentLocale } = Astro;
+
+const t = useTranslations(currentLocale ?? 'en');
 ---
 
 <div class="max-w xl">
@@ -13,10 +18,10 @@ import LinkButton from '../commons/LinkButton.astro'
       </span>
     </h1>
 
-    <p class='mt-6 text-xl w-3/5 text-center opacity-80'>I'm a frontend developer passionate about crafting enjoyable experiences. Explore my portfolio!</p>
+    <p class='mt-6 text-xl w-3/5 text-center opacity-80'>{t('hero.message')}</p>
 
-    <LinkButton className="mt-4">
-      Contact Me
+    <LinkButton className="mt-4" href='mailto:alejandropg339@gmail.com'>
+      {t('hero.button')}
     </LinkButton>
 
   </div>

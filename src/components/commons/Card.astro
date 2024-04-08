@@ -1,5 +1,5 @@
 ---
-const {class: className, highlight= true,...rest } = Astro.props
+const {class: className, highlight= true, alignment= '', ...rest } = Astro.props
 
 ---
 
@@ -7,19 +7,19 @@ const {class: className, highlight= true,...rest } = Astro.props
  {...rest}
   class={
   `
+  ${className}
   flex flex-col
-  items-center
+  items-${alignment ? alignment : 'center'}
   rounded-3xl
   relative
   border-[0.5px]
   boder-solid
   border-[#ffffff24]
   bg-[#16161d]
-  ${highlight  ? 'border-gradient' : 'overflow-hidden hover:neon-smooth-slate'}
-  ${className}`
+  ${highlight  ? 'border-gradient' : 'overflow-hidden hover:neon-smooth-slate'}`
 }
 >
-<div class="relative z-10 h-full">
+<div class="relative z-10 h-full w-full">
   <slot />
 </div>
 </div>

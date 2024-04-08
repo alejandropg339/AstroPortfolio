@@ -4,40 +4,52 @@ import Header from '../../components/header/Header.astro';
 import SectionContainer from '../../components/commons/SectionContainer.astro';
 import Hero from '../../components/hero/Hero.astro';
 import About from '../../components/about/About.astro';
-import Skills from '../../components/skills/Skills.astro'
-import Experience from '../../components/experience/Experience.astro'
-import Projects from '../../components/projects/Projects.astro'
-import Contact from '../../components/contact/Contact.astro'
+import Skills from '../../components/skills/Skills.astro';
+import Experience from '../../components/experience/Experience.astro';
+import Projects from '../../components/projects/Projects.astro';
+import Contact from '../../components/contact/Contact.astro';
 ---
 
 <Layout title="Alejandro Padilla - Frontend Developer">
-	<Header/>
-	<main class='px-5 md:px-0'>
-		<SectionContainer  class='h-screen flex items-center' id='home'>
-			<Hero/>
-		</SectionContainer>
+  <Header />
+  <main class="px-5 md:px-0">
+    <SectionContainer class="h-screen flex items-center" id="home">
+      <Hero />
+    </SectionContainer>
 
-		<SectionContainer class='mb-32' id='about'>
-			<About/>
-		</SectionContainer>
+    <SectionContainer class="mb-32" id="about">
+		<span
+        class="absolute top-[4em] left-1/2 w-[40em] max-w-full h-[5em] rounded-[30%] block translate-x-[-50%] translate-y-0 will-change-transform blur-[100px] z-[-1] bg-bottom-gradient"
+      ></span>
+      <About />
+    </SectionContainer>
 
-		<SectionContainer class='mb-32' id='skills'>
-			<Skills/>
-		</SectionContainer>
+    <SectionContainer class="mb-32" id="skills">
+      <span
+        class="absolute top-[20em] left-1/2 w-[40em] max-w-full h-[20em] rounded-[30%] block translate-x-[-50%] translate-y-0 will-change-transform blur-[100px] z-[-1] bg-radial-gradient"
+      ></span>
+      <Skills />
+    </SectionContainer>
 
-		<SectionContainer class='mb-32' id='experience'>
-			<Experience/>
-		</SectionContainer>
-		
-		<SectionContainer class='mb-32' id='projects'>
-			<Projects/>
-		</SectionContainer>
-		
-		<SectionContainer class='mb-32' id='contact'>
-			<Contact/>
-		</SectionContainer>
+    <SectionContainer class="mb-32" id="experience">
+		<span
+        class="absolute top-[7em] left-1/2 w-[40em] max-w-full h-[5em] rounded-[30%] block translate-x-[-50%] translate-y-0 will-change-transform blur-[100px] z-[-1] bg-bottom-gradient"
+      ></span>
+      <Experience />
+    </SectionContainer>
 
-	</main>
+    <SectionContainer class="mb-32" id="projects">
+		<span
+        class="absolute top-[20em] left-1/2 w-[40em] max-w-full h-[20em] rounded-[30%] block translate-x-[-50%] translate-y-0 will-change-transform blur-[100px] z-[-1] bg-orange-gradient"
+      ></span>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer class="mb-48" id="contact">
+      <span
+        class="absolute top-[4em] left-1/2 w-[40em] max-w-full h-[5em] rounded-[30%] block translate-x-[-50%] translate-y-0 will-change-transform blur-[100px] z-[-1] bg-bottom-gradient"
+      ></span>
+      <Contact />
+    </SectionContainer>
+  </main>
 </Layout>
-
-

@@ -32,6 +32,8 @@ const { title } = Astro.props;
     dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
   > -->
 		<slot />
+    <div class="absolute top-full bottom-full z-[-2] w-full min-h-screen
+    bg-[radial-gradient(at center bottom, #7C7BCA4D, #FFFFFF00)]"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 	</body>
 </html>
@@ -110,3 +112,9 @@ const { title } = Astro.props;
         }
       }
 </style>
+<!-- /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=7c7bca4d&c2=ffffff00&gt=r&gd=dbb
+*/
+background: #7C7BCA4D;
+background: radial-gradient(at center bottom, #7C7BCA4D, #FFFFFF00); -->

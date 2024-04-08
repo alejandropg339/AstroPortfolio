@@ -1,8 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import Card from '../commons/Card.astro';
+import { useTranslations } from '../../i18n/utils';
 
 const personalImageAlt = 'Alejandro Padilla';
+
+const { currentLocale } = Astro;
+
+const t = useTranslations(currentLocale ?? 'en');
 ---
 
 <div class="grid grid-flow-row grind-cols-1 md:grid-cols-3 gap-4">
@@ -31,22 +36,15 @@ const personalImageAlt = 'Alejandro Padilla';
         height={200}
         loading="eager"
       />
-    <h2 class='text-4xl font-semibold mb-2 mt-4 md:mt-0'>About me</h2>
-    <p class='text-sm leading-relaxed opacity-85'>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto iste
-      cumque eum quam tempora in magnam quaerat, exercitationem autem soluta
-      dolore vero perferendis consectetur molestiae incidunt, error assumenda
-      nam mollitia? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Iste eius ullam, minima, deserunt dolorum rem fugit quo sint
-      necessitatibus quisquam suscipit rerum culpa consequuntur sapiente. Earum
-      odio aliquid ipsa eum! Lorem ipsum dolor sit amet consectetur, adipisicing
-      elit. Repudiandae voluptas suscipit adipisci doloribus optio ducimus aut
-      qui. Eum, exercitationem sed. Veritatis architecto cumque odio
-      necessitatibus nam, minima dignissimos debitis voluptate! Lorem ipsum
-      dolor sit amet consectetur adipisicing elit. Repudiandae odio voluptatibus
-      tenetur consequuntur itaque animi, aperiam perspiciatis dignissimos
-      voluptatem quae atque excepturi, perferendis cupiditate rem quas
-      distinctio neque? Aperiam, accusantium.
+    <h2 class='text-4xl font-semibold mb-2 mt-4 md:mt-0'>{t('about.title')}</h2>
+    <p class='leading-relaxed opacity-85 mb-1 text-base'>
+      {t('about.text1')} 
+    </p>
+    <p class='text-base leading-relaxed opacity-85 mb-1'>
+      {t('about.text2')} 
+    </p>
+    <p class='text-base leading-relaxed opacity-85'>
+      {t('about.text3')} 
     </p>
   </Card>
   <!-- </div> -->

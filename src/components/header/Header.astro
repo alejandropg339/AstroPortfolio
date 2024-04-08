@@ -52,14 +52,17 @@ const locales = [
     label: 'ES',
     compnonent: MXN,
     path: '/es',
-  }
+  },
 ];
 
+const currentLang =
+  locales.find(
+    (locale) => locale.label === currentLocale?.toLocaleUpperCase()
+  ) ?? locales[0];
 
-const currentLang = locales.find((locale) => locale.label === currentLocale?.toLocaleUpperCase()) ?? locales[0];
-
-const avalibleLocales = locales.filter((locale) => locale.label !== currentLang.label.toLocaleUpperCase());
-
+const avalibleLocales = locales.filter(
+  (locale) => locale.label !== currentLang.label.toLocaleUpperCase()
+);
 ---
 
 <header>
@@ -81,12 +84,52 @@ const avalibleLocales = locales.filter((locale) => locale.label !== currentLang.
             </a>
           ))
         }
+
+        <div class="flex items-center space-x-1 rtl:space-x-reverse">
+          <span>|</span>
+          <button
+            type="button"
+            data-dropdown-toggle="language-dropdown-menu-descktop"
+            class="inline-flex items-center px-4 py-[0.3rem] rounded-full transition-all duration-100 hover:neon-slate text-md hover:bg-radial-gradient"
+          >
+            <currentLang.compnonent />
+            {currentLang.label}
+          </button>
+          <!-- Dropdown -->
+          <div
+            class="z-50 hidden my-4 text-base list-none divide-y divide-gray-100 rounded-lg shadow bg-gray-800"
+            id="language-dropdown-menu-descktop"
+          >
+            <ul class="py-2 font-medium" role="none">
+              <li>
+                {
+                  avalibleLocales.map((item) => (
+                    <a
+                      href={item.path}
+                      class="block px-4 py-2 text-sm hover:bg-[#ffffff24] "
+                      role="menuitem"
+                    >
+                      <div class="inline-flex items-center">
+                        <div class="flex">
+                          <item.compnonent />
+                          <span>{item.label}</span>
+                        </div>
+                      </div>
+                    </a>
+                  ))
+                }
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
   </aside>
 
   <aside class="block md:hidden">
-    <nav class="fixed w-full z-50 backdrop-blur-[12px] backdrop-filter bg-[hsla(0,0%,100%,.01)]">
+    <nav
+      class="fixed w-full z-50 backdrop-blur-[12px] backdrop-filter bg-[hsla(0,0%,100%,.01)]"
+    >
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2"
       >
@@ -94,17 +137,15 @@ const avalibleLocales = locales.filter((locale) => locale.label !== currentLang.
           href="https://flowbite.com/"
           class="flex items-center space-x-3 rtl:space-x-reverse"
         >
-        <Logo class="size-12" />
+          <Logo class="size-12" />
         </a>
-        <div
-          class="flex items-center space-x-1 rtl:space-x-reverse"
-        >
+        <div class="flex items-center space-x-1 rtl:space-x-reverse">
           <button
             type="button"
             data-dropdown-toggle="language-dropdown-menu"
             class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm rounded-lg cursor-pointer hover:bg-gray-700"
           >
-            <currentLang.compnonent/>
+            <currentLang.compnonent />
             {currentLang.label}
           </button>
           <!-- Dropdown -->
@@ -114,29 +155,29 @@ const avalibleLocales = locales.filter((locale) => locale.label !== currentLang.
           >
             <ul class="py-2 font-medium" role="none">
               <li>
-                {avalibleLocales.map((item) => (
-                <a
-                  href={item.path}
-                  class="block px-4 py-2 text-sm hover:bg-[#ffffff24] "
-                  role="menuitem"
-                >
-                  <div class="inline-flex items-center">
-                      <div class='flex'>
-                        <item.compnonent/>
-                        <span>{item.label}</span>
+                {
+                  avalibleLocales.map((item) => (
+                    <a
+                      href={item.path}
+                      class="block px-4 py-2 text-sm hover:bg-[#ffffff24] "
+                      role="menuitem"
+                    >
+                      <div class="inline-flex items-center">
+                        <div class="flex">
+                          <item.compnonent />
+                          <span>{item.label}</span>
+                        </div>
                       </div>
-                    </div>
-                  </a>
-                    ))}
+                    </a>
+                  ))
+                }
               </li>
             </ul>
           </div>
           <button
-            data-collapse-toggle="navbar-language"
             type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg  focus:outline-none focus:ring-2  hover:bg-gray-700 focus:ring-gray-600"
-            aria-controls="navbar-language"
-            aria-expanded="false"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg focus:outline-none focus:ring-2 hover:bg-gray-700 focus:ring-gray-600"
+            id="button-mobile-menu"
           >
             <svg
               class="w-5 h-5"
@@ -155,24 +196,26 @@ const avalibleLocales = locales.filter((locale) => locale.label !== currentLang.
           </button>
         </div>
         <div
-          class="items-center justify-between hidden w-full"
+          class="items-center justify-betweens w-full hidden"
           id="navbar-language"
         >
           <ul
-            class="flex flex-col font-medium p-4 mt-4 border rounded-lg  rtl:space-x-reverse  backdrop-blur-[20px] backdrop-filter bg-[hsla(0,0%,100%,.01)] border-[#ffffff24]"
+            class="flex flex-col font-medium p-4 mt-4 border rounded-lg rtl:space-x-reverse backdrop-blur-[20px] backdrop-filter bg-[hsla(0,0%,100%,.01)] border-[#ffffff24]"
           >
-          {
-            navItems.map(({ label, title, url }) => (
-              <li>
-              <a
-                href={url}
-                aria-label={label}
-                class="block py-2 px-3 rounded"
-                >{title}</a>
-            </li>
-            ))
-          }
-            
+            {
+              navItems.map(({ label, title, url }) => (
+                <li>
+                  <a
+                    href={url}
+                    aria-label={label}
+                    class="block py-2 px-3 rounded"
+                    data-mobile-item
+                  >
+                    {title}
+                  </a>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
@@ -181,9 +224,9 @@ const avalibleLocales = locales.filter((locale) => locale.label !== currentLang.
 </header>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
-    const navItems = document.querySelectorAll('header section nav a');
+    const navItems = document.querySelectorAll('header aside div nav a');
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
@@ -222,18 +265,18 @@ const avalibleLocales = locales.filter((locale) => locale.label !== currentLang.
       }
     };
   });
+
+  const mobileMenuContent = document.querySelector('#navbar-language');
+  const mobileMenuButton = document.querySelector('#button-mobile-menu');
+  const mobileItemsMenu = document.querySelectorAll('[data-mobile-item]');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenuContent?.classList.toggle('hidden');
+  });
+
+  mobileItemsMenu.forEach((item) => {
+    item.addEventListener('click', () => {
+      mobileMenuContent?.classList.add('hidden');
+    });
+  });
 </script>
-
-<style>
-  nav {
-    animation: nav-shadown 1s linear both;
-    animation-timeline: scroll();
-    animation-range: 0 100px;
-  }
-
-  /* @keyframes nav-shadown {
-      to {
-        @apply shadow-lg ring-1 backdrop-blur bg-gray-800/90 bg-white/50 ring-white/10;
-      }
-    } */
-</style>
