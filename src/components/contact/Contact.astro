@@ -4,6 +4,7 @@ import Linkedin from '../assets/Linkedin.astro';
 import Mail from '../assets/Mail.astro';
 import Github from '../assets/Github.astro';
 import SocialButtons from './SocialButtons.astro';
+import Meteors from '../commons/Meteors.astro';
 
 const contact = [
   {
@@ -44,11 +45,12 @@ const contact = [
         return (
           <SocialButtons link={item.link}>
             <aside class="grayscale">
-              <item.icon class="size-8" />
+              <item.icon class="size-7" />
             </aside>
           </SocialButtons>
         );
       })
     }
   </div>
+  <Meteors/>
 </aside>

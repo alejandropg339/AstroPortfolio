@@ -1,0 +1,29 @@
+---
+
+---
+
+{
+  [...new Array(20).fill(true)].map((el) => (
+    <span
+      class="meteor animate-meteor-effect absolute  h-0.5 w-0.5 rounded-[9999px] bg-slate-500 shadow-[0_0_0_1px_#ffffff10] rotate-[215deg]"
+      style={{
+        top: 0,
+        left: Math.floor(Math.random() * 50) + 'vw',
+        animationDelay: Math.random() * (0.8 - 0.2) + 0.2 + 's',
+        animationDuration: Math.floor(Math.random() * (10 - 2) + 2) + 's',
+      }}
+    />
+  ))
+}
+
+<style>
+  .meteor::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, #64748b, transparent);
+  }
+</style>
