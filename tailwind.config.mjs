@@ -46,7 +46,8 @@ export default {
       animation: {
         gradient: 'animatedgradient 6s ease infinite alternate',
         ['infinite-slider']: 'infiniteSlider 30s linear infinite',
-        'meteor-effect': 'meteor 5s linear infinite',
+        'meteor-effect': 'meteor 7s linear infinite',
+        
       },
     },
   },
